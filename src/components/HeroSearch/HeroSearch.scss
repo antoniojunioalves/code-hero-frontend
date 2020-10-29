@@ -1,0 +1,13 @@
+.hero-search {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+
+.title {
+  height: 36px;
+  text-align: left;
+  font: normal normal bold 32px/30px 'PT Sans Caption';
+  color: #555555;
+  margin: 0;
+}
