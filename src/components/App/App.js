@@ -1,12 +1,15 @@
 import React from 'react'
+
+// style
 import './App.scss'
 
+// components
+import Header from '../Header'
+
 const App = () => (
-  <div data-testid='app-component' className='App'>
-    <header className='App-header'>
-      <h1>Code Hero</h1>
-    </header>
-  </div>
+  <section data-testid='app-component' className='App'>
+    <Header />
+  </section>
 )
 
 export default App
