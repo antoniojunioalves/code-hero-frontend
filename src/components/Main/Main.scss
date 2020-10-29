@@ -1,3 +1,11 @@
 .main {
   background-color: #e5e5e5;
+
+  > section {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin: 40px 113px 24px;
+  }
 }
+
+

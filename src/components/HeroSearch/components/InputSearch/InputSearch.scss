@@ -1,0 +1,38 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+
+  > p {
+    font: normal normal bold 16px/24px 'PT Sans Caption';
+    color: #555555;
+    margin: 6px 0;
+  }
+}
+
+.input-content {
+  position: relative;
+  max-width: 295px;
+
+  > svg {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    z-index: 1;
+
+    &:hover {
+     cursor: pointer; 
+    }
+  }
+}
+
+.input-search {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font: italic normal normal 14px/19px PT Sans;
+  color: #8e8e8e;
+  height: 32px;
+}
