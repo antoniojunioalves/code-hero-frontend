@@ -1,0 +1,46 @@
+.header {
+  background-color: #ffffff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  top: 18px;
+  left: 20px;
+  width: 104px;
+  height: 30px;
+  border: 1px solid #000000;
+}
+
+.participante {
+  display: flex;
+  align-items: center;
+
+  > p {
+    font: normal normal bold 14px/20px 'PT Sans Caption';
+    letter-spacing: 0px;
+    color: #555555;
+
+    > span {
+      font: normal normal normal 14px/20px 'PT Sans Caption';
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    width: 32px;
+    height: 32px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+
+    > p {
+      font: normal normal bold 15px/10px 'PT Sans Caption';
+    }
+  }
+}
