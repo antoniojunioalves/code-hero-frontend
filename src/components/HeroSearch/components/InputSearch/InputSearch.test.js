@@ -3,7 +3,6 @@ import InputSearch from './InputSearch'
 
 test('renders InputSearch component', () => {
   render(<InputSearch />)
-  const component = screen.getByTestId('input-search-component')
 
-  expect(component).toBeInTheDocument()
+  expect(screen.getByTestId('input-search-component')).toBeInTheDocument()
 })

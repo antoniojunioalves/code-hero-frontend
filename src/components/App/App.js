@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // style
 import './App.scss'
@@ -7,11 +7,19 @@ import './App.scss'
 import Header from '../Header'
 import Main from '../Main'
 
-const App = () => (
-  <section data-testid='app-component' className='App'>
-    <Header />
-    <Main />
-  </section>
-)
+// context
+import HeroContext from '../HeroContext'
 
+const App = () => {
+  const [heroes, setHeroes] = useState([])
+
+  return (
+    <section data-testid='app-component' className='App'>
+      <Header />
+      <HeroContext.Provider value={{ heroes, setHeroes }}>
+        <Main />
+      </HeroContext.Provider>
+    </section>
+  )
+}
 export default App
