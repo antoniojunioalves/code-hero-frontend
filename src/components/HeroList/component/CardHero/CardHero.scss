@@ -1,0 +1,31 @@
+.card-hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px #00000033;
+  border-radius: 4px;
+  padding: 20px 24px;
+
+  > section > p {
+    font: normal normal normal 14px/16px PT Sans;
+    color: #555555;
+    margin: 0;
+  }
+}
+
+.personagem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+
+  > img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+  }
+
+  > p {
+    font: normal normal bold 16px/22px 'PT Sans' !important;
+  }
+}

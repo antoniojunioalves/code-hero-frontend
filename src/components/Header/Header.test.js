@@ -3,7 +3,6 @@ import Header from './Header'
 
 test('renders Header component', () => {
   render(<Header />)
-  const component = screen.getByTestId('header-component')
 
-  expect(component).toBeInTheDocument()
+  expect(screen.getByTestId('header-component')).toBeInTheDocument()
 })
