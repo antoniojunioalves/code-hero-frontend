@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './CardHero.scss'
+import './cardHero.scss'
 
 const CardHero = ({ name, series, events, urlImage, extensionImage }) => (
   <div data-testid='card-hero-component' className='card-hero'>
