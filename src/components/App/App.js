@@ -12,6 +12,7 @@ import Footer from '../Footer'
 import HeroContext from '../HeroContext'
 
 const App = () => {
+  const [nameStartWith, setNameStartWith] = useState('')
   const [heroes, setHeroes] = useState([])
   const [pagination, _setPagination] = useState({
     page: 1,
@@ -32,6 +33,8 @@ const App = () => {
           setHeroes,
           pagination,
           setPagination: handlePagination,
+          nameStartWith,
+          setNameStartWith,
         }}
       >
         <Main />
