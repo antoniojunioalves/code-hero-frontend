@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import Main from './Main'
 import HeroContext from '../HeroContext'
 
@@ -20,37 +20,53 @@ const response = {
   },
 }
 
+const pagination = {
+  page: 1,
+  limit: 10,
+  total: 100,
+}
+
 const mockApi =
-  'https://gateway.marvel.com:443/v1/public/characters?apikey=e6dd575a751d830896bec720dea8405f'
+  'https://gateway.marvel.com/v1/public/characters?limit=10&offset=0&apikey=e6dd575a751d830896bec720dea8405f'
 
 describe('Main component test', () => {
-  afterEach(() => fetchMock.restore())
+  afterEach(() => fetchMock.reset())
 
   test('renders Main component with Heroes', () => {
     fetchMock.mock(mockApi, response)
 
+    const setHeroes = jest.fn()
+
     render(
       <HeroContext.Provider
-        value={{ heroes: response.data.results, setHeroes: jest.fn() }}
+        value={{
+          pagination,
+          heroes: response.data.results,
+          setHeroes,
+        }}
       >
         <Main />
       </HeroContext.Provider>
     )
 
-    expect(screen.getByTestId('main-component')).toBeInTheDocument()
-    expect(screen.getByText('3-D Man')).toBeInTheDocument()
+    waitFor(() => {
+      expect(screen.getByTestId('main-component')).toBeInTheDocument()
+      expect(setHeroes).toBeCalled(response.data.results)
+    })
   })
 
   test('renders Main component and throw error on fetch', () => {
-    fetchMock.mock(mockApi, 500)
+    const setHeroes = jest.fn()
 
     render(
-      <HeroContext.Provider value={{ heroes: [], setHeroes: jest.fn() }}>
+      <HeroContext.Provider value={{ pagination, heroes: [], setHeroes }}>
         <Main />
       </HeroContext.Provider>
     )
 
-    expect(screen.getByTestId('main-component')).toBeInTheDocument()
-    expect(screen.queryByText('3-D Man')).not.toBeInTheDocument()
+    waitFor(() => {
+      expect(screen.getByTestId('main-component')).toBeInTheDocument()
+      expect(setHeroes).toBeCalled([])
+    })
   })
 })

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Style
-import './InputSearch.scss'
+import './inputSearch.scss'
 
 // assets
 import { ReactComponent as Search } from '../../../../assets/images/search.svg'

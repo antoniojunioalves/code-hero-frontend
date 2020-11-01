@@ -1,25 +1,44 @@
 import React, { useState } from 'react'
 
 // style
-import './App.scss'
+import './app.scss'
 
 // components
 import Header from '../Header'
 import Main from '../Main'
+import Footer from '../Footer'
 
 // context
 import HeroContext from '../HeroContext'
 
 const App = () => {
   const [heroes, setHeroes] = useState([])
+  const [pagination, _setPagination] = useState({
+    page: 1,
+    limit: 10,
+    total: 0,
+  })
+
+  const handlePagination = (props) => {
+    _setPagination({ ...pagination, ...props })
+  }
 
   return (
     <section data-testid='app-component' className='App'>
       <Header />
-      <HeroContext.Provider value={{ heroes, setHeroes }}>
+      <HeroContext.Provider
+        value={{
+          heroes,
+          setHeroes,
+          pagination,
+          setPagination: handlePagination,
+        }}
+      >
         <Main />
+        <Footer />
       </HeroContext.Provider>
     </section>
   )
 }
+
 export default App
