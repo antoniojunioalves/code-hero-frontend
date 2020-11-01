@@ -11,13 +11,22 @@ import HeroList from '../HeroList'
 import useHeroContext from '../HeroContext/useHeroContext'
 
 const Main = () => {
-  const { pagination, setHeroes, setPagination } = useHeroContext()
+  const {
+    nameStartWith,
+    pagination,
+    setHeroes,
+    setPagination,
+  } = useHeroContext()
 
   const fetchHeroes = async () => {
     try {
       const offset = (pagination.page - 1) * pagination.limit
 
       let queryString = `limit=${pagination.limit}&offset=${offset}&apikey=e6dd575a751d830896bec720dea8405f`
+
+      if (!!nameStartWith) {
+        queryString = queryString.concat(`&nameStartsWith=${nameStartWith}`)
+      }
 
       const { results, total } = await fetch(
         `https://gateway.marvel.com:443/v1/public/characters?${queryString}`
@@ -34,7 +43,7 @@ const Main = () => {
 
   useEffect(() => {
     fetchHeroes()
-  }, [pagination.page])
+  }, [pagination.page, nameStartWith])
 
   return (
     <main data-testid='main-component' className='main'>

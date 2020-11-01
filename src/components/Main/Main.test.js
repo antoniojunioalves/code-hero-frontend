@@ -59,7 +59,9 @@ describe('Main component test', () => {
     const setHeroes = jest.fn()
 
     render(
-      <HeroContext.Provider value={{ pagination, heroes: [], setHeroes }}>
+      <HeroContext.Provider
+        value={{ nameStartWith: 'X-man', pagination, heroes: [], setHeroes }}
+      >
         <Main />
       </HeroContext.Provider>
     )
