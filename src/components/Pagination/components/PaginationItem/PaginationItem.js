@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './paginationItem.scss'
+import './_paginationItem.scss'
 
 const PaginationItem = ({ label, page, isActive, isDisabled, onClickItem }) => {
   const getCssClassName = () => {

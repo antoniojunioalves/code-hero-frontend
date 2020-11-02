@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // Style
-import './hero.scss'
+import './_hero.scss'
 
 // Context
 import useHeroContext from '../HeroContext/useHeroContext'

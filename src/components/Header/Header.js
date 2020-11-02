@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // Style
-import './header.scss'
+import './_header.scss'
 
 // logo
 import logo from '../../assets/images/objective.jpg'

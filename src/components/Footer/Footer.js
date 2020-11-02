@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 // Style
-import './footer.scss'
+import './_footer.scss'
 
 // components
 import Pagination from '../Pagination'

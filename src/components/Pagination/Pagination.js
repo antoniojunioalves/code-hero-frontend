@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './pagination.scss'
+import './_pagination.scss'
 
 // components
 import PaginationItem from './components/PaginationItem'

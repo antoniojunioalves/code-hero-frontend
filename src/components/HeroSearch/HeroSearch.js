@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Style
-import './heroSearch.scss'
+import './_heroSearch.scss'
 
 // Components
 import InputSearch from './components/InputSearch'

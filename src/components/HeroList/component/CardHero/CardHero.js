@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './cardHero.scss'
+import './_cardHero.scss'
 
 // React router
 import { Link } from 'react-router-dom'

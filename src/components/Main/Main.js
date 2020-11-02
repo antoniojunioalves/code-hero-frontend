@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 // style
-import './main.scss'
+import './_main.scss'
 
 // Components
 import HeroSearch from '../HeroSearch'

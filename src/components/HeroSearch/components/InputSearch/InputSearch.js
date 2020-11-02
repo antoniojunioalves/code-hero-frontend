@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './inputSearch.scss'
+import './_inputSearch.scss'
 
 // assets
 import { ReactComponent as Search } from '../../../../assets/images/search.svg'

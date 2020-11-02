@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Style
-import './heroList.scss'
+import './_heroList.scss'
 
 // Components
 import CardHero from './component/CardHero'

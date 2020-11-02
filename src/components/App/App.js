@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // style
-import './app.scss'
+import './_app.scss'
 
 // components
 import Header from '../Header'
