@@ -1,12 +1,20 @@
 .main {
-  background-color: #e5e5e5;
   margin-bottom: 96px;
+
+  @media screen and (max-width: 960px) {
+    margin-bottom: 64px;
+  }
 
   > section {
     display: grid;
     grid-template-rows: auto 1fr;
     margin: 40px 113px 24px;
     gap: 32px;
+
+    @media screen and (max-width: 960px) {
+      margin: 24px;
+      gap: 18px;
+    }
   }
 }
 

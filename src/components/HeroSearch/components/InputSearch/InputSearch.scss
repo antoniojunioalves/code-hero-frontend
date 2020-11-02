@@ -7,12 +7,21 @@
     font: normal normal bold 16px/24px 'PT Sans Caption';
     color: #555555;
     margin: 6px 0;
+
+    @media screen and (max-width: 960px) {
+      text-align: center;
+      font-size: 14px;
+    }
   }
 }
 
 .input-content {
   position: relative;
   max-width: 295px;
+
+  @media screen and (max-width: 960px) {
+    max-width: 100%;
+  }
 
   > svg {
     position: absolute;
@@ -35,4 +44,9 @@
   font: italic normal normal 14px/19px PT Sans;
   color: #8e8e8e;
   height: 32px;
+
+  &:focus {
+    outline: 1px solid #00000033;
+    outline-style: inset;
+  }
 }

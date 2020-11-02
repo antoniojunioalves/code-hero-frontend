@@ -25,6 +25,7 @@ const HeroList = () => {
             return (
               <li key={id}>
                 <CardHero
+                  id={id}
                   name={name}
                   series={series}
                   events={events}

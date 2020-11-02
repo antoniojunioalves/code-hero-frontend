@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import CardHero from './CardHero'
 
 test('renders CardHero component', () => {
@@ -12,7 +13,11 @@ test('renders CardHero component', () => {
     },
   }
 
-  render(<CardHero {...props} />)
+  render(
+    <Router>
+      <CardHero {...props} />
+    </Router>
+  )
 
   expect(screen.getByTestId('card-hero-component')).toBeInTheDocument()
 })

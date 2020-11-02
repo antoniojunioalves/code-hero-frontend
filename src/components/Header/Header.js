@@ -1,5 +1,8 @@
 import React from 'react'
 
+// React router
+import { Link } from 'react-router-dom'
+
 // Style
 import './header.scss'
 
@@ -8,7 +11,9 @@ import logo from '../../assets/images/objective.jpg'
 
 const Header = () => (
   <header data-testid='header-component' className='header'>
-    <img alt='logo' src={logo} className='logo' />
+    <Link to='/'>
+      <img alt='logo' src={logo} className='logo' />
+    </Link>
     <section className='participante'>
       <p>
         Renan Frutuozo <span>Teste de Front-end</span>
