@@ -44,7 +44,7 @@ const Hero = () => {
     const { series: { collectionURI } = {} } = hero
 
     if (!!collectionURI) {
-      fetchSeries(collectionURI)
+      fetchSeries(collectionURI?.replace('http://', 'https://'))
     }
   }, [hero.series])
 
