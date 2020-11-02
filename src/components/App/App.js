@@ -5,7 +5,7 @@ import './app.scss'
 
 // components
 import Header from '../Header'
-import Main from '../Main'
+import Routes from '../Routes'
 import Footer from '../Footer'
 
 // context
@@ -37,7 +37,7 @@ const App = () => {
           setNameStartWith,
         }}
       >
-        <Main />
+        <Routes />
         <Footer />
       </HeroContext.Provider>
     </section>

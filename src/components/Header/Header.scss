@@ -42,4 +42,17 @@
       font: normal normal bold 15px/10px 'PT Sans Caption';
     }
   }
+
+  @media screen and (max-width: 960px) {
+    text-align: right;
+    
+    > p {
+      display: inline-grid;
+      font: normal normal bold 12px/18px 'PT Sans Caption';
+
+      > span {
+        font: normal normal normal 12px/18px 'PT Sans Caption';
+      }
+    }
+  }
 }

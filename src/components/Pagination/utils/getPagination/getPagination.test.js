@@ -18,3 +18,9 @@ test('getPagination return default current_page', () => {
 
   expect(pagination.current_page).toEqual(1)
 })
+
+test('getPagination with current_page > total_pages', () => {
+  const pagination = getPagination(10, 10, 10, 1)
+
+  expect(pagination.current_page).toEqual(1)
+})

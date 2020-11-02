@@ -10,4 +10,9 @@
   font: normal normal bold 32px/30px 'PT Sans Caption';
   color: #555555;
   margin: 0;
+
+  @media screen and (max-width: 960px) {
+    text-align: center;
+    font-size: 24px;
+  }
 }

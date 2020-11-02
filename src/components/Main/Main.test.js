@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Main from './Main'
 import HeroContext from '../HeroContext'
 
@@ -38,15 +39,17 @@ describe('Main component test', () => {
     const setHeroes = jest.fn()
 
     render(
-      <HeroContext.Provider
-        value={{
-          pagination,
-          heroes: response.data.results,
-          setHeroes,
-        }}
-      >
-        <Main />
-      </HeroContext.Provider>
+      <Router>
+        <HeroContext.Provider
+          value={{
+            pagination,
+            heroes: response.data.results,
+            setHeroes,
+          }}
+        >
+          <Main />
+        </HeroContext.Provider>
+      </Router>
     )
 
     waitFor(() => {
@@ -59,11 +62,13 @@ describe('Main component test', () => {
     const setHeroes = jest.fn()
 
     render(
-      <HeroContext.Provider
-        value={{ nameStartWith: 'X-man', pagination, heroes: [], setHeroes }}
-      >
-        <Main />
-      </HeroContext.Provider>
+      <Router>
+        <HeroContext.Provider
+          value={{ nameStartWith: 'X-man', pagination, heroes: [], setHeroes }}
+        >
+          <Main />
+        </HeroContext.Provider>
+      </Router>
     )
 
     waitFor(() => {

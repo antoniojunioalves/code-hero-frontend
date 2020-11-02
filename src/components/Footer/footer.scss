@@ -7,4 +7,8 @@
   background-color: #FFFFFF;
   position: fixed;
   bottom: 0;
+
+  @media screen and (max-width: 960px) {
+    height: 64px;
+  }
 }

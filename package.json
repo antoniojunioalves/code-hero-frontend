@@ -10,6 +10,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
@@ -49,10 +50,10 @@
   "jest": {
     "coverageThreshold": {
       "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
+        "branches": 97.14,
+        "functions": 97.56,
+        "lines": 98.51,
+        "statements": 98.55
       }
     },
     "collectCoverageFrom": [

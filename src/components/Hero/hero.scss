@@ -1,0 +1,110 @@
+.hero-component {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 40px 113px 96px;
+  gap: 32px;
+
+  @media screen and (max-width: 960px) {
+    margin: 24px 24px 64px;
+    gap: 0;
+  }
+}
+
+.hero-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 960px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  > div {
+    justify-self: start;
+
+    > h2 {
+      margin-top: 0;
+      font: normal normal bold 32px/30px PT Sans Caption;
+      color: #555555;
+      position: relative;
+
+      @media screen and (max-width: 960px) {
+        font-size: 24px;
+      }
+
+      &::after {
+        content: " ";
+        border: 4px solid #00000033;
+        position: absolute;
+        bottom: -16px;
+        left: 0px;
+        width: 48px;
+      }
+    }
+
+    > p {
+      font: normal normal normal 14px/16px PT Sans;
+      color: #555555;
+      margin: 48px 24px;
+
+      @media screen and (max-width: 960px) {
+        margin: 32px 12px;
+      }
+    }
+  }
+  
+  > img {
+    justify-self: end;
+    max-width: 280px;
+    height: 340px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #000000;
+
+    @media screen and (max-width: 960px) {
+      display: none;
+    }
+  }
+}
+
+.hero-series {
+  display: grid;
+  gap: 16px;
+
+  > h3 {
+    font: normal normal bold 22px/28px PT Sans Caption;
+    color: #555555;
+    position: relative;
+
+    &::after {
+      content: " ";
+      border: 3px solid #00000033;
+      position: absolute;
+      bottom: -16px;
+      left: 0px;
+      width: 48px;
+    }
+  }
+
+  > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+    grid-gap: 32px;
+    grid-auto-rows: min-content;
+    list-style: none;
+    padding: 0;
+
+    > li {
+      > img {
+        width: 136px;
+        height: 196px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 5px #000000;
+      }
+
+      > p {
+        font: normal normal bold 14px/16px PT Sans;
+        color: #555555;
+      }
+    }
+  }
+}

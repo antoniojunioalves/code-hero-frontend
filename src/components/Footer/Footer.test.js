@@ -1,6 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import Footer from './Footer'
 import HeroContext from '../HeroContext'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const pagination = {
   page: 1,
@@ -11,7 +12,9 @@ const pagination = {
 test('renders Footer component', () => {
   render(
     <HeroContext.Provider value={{ pagination }}>
-      <Footer />
+      <Router>
+        <Footer />
+      </Router>
     </HeroContext.Provider>
   )
 
@@ -23,9 +26,31 @@ test('handle change page', () => {
 
   render(
     <HeroContext.Provider value={{ pagination, setPagination }}>
-      <Footer />
+      <Router>
+        <Footer />
+      </Router>
     </HeroContext.Provider>
   )
+
+  fireEvent.click(screen.getByText('>>'))
+  expect(setPagination).toBeCalledWith({ page: 10 })
+})
+
+test('handle resize window', () => {
+  const setPagination = jest.fn()
+
+  render(
+    <HeroContext.Provider value={{ pagination, setPagination }}>
+      <Router>
+        <Footer />
+      </Router>
+    </HeroContext.Provider>
+  )
+
+  act(() => {
+    window.innerWidth = 960
+    fireEvent(window, new Event('resize'))
+  })
 
   fireEvent.click(screen.getByText('>>'))
   expect(setPagination).toBeCalledWith({ page: 10 })

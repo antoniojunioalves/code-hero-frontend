@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Style
-import './Pagination.scss'
+import './pagination.scss'
 
 // components
 import PaginationItem from './components/PaginationItem'
@@ -15,6 +15,7 @@ const Pagination = ({
   itemsDisplayed,
   total,
   currentPage,
+  isDisabled,
   onChangePage,
 }) => {
   const createPaginationItems = () => {
@@ -76,9 +77,13 @@ const Pagination = ({
   }
 
   return (
-    <ul data-testid='pagination-component' className='pagination'>
-      {createPaginationItems()}
-    </ul>
+    <>
+      {!isDisabled && (
+        <ul data-testid='pagination-component' className='pagination'>
+          {createPaginationItems()}
+        </ul>
+      )}
+    </>
   )
 }
 
@@ -87,11 +92,13 @@ Pagination.propTypes = {
   itemsDisplayed: PropTypes.number,
   total: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
+  isDisabled: PropTypes.bool,
   onChangePage: PropTypes.func.isRequired,
 }
 
 Pagination.defaultProps = {
   itemsDisplayed: 5,
+  isDisabled: false,
 }
 
 export default Pagination
